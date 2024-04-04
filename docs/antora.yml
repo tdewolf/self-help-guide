@@ -1,7 +1,6 @@
 name: git
 title: Git Commands
 version: 1.0
-start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc
   - modules/gitdocs/nav.adoc
