@@ -1,7 +1,6 @@
 site:
   title: Git Commands
   url: https://example.com
-  start_page: git::index.adoc
 content:
   sources:
     - url: https://github.com/tdewolf/mygitdocs.git
