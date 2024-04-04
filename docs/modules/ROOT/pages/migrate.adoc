@@ -1,0 +1,33 @@
+= Migrate directory to another repo
+
+Migrate a directory retaining its directory name to another repo, new or existing.
+
+In most examples that you find on the web, you only migrate the files and not the parent directory, which can be hard to identify aftwards which files have migrated.
+
+This procedure is taken from link:https://stackoverflow.com/questions/32940679/how-do-i-git-subtree-split-but-maintain-the-full-folder-hierarchy[stackoverflow]
+
+. In the source repo:
++
+[,console]
+----
+~$ git co -b <anybranchname> 
+~$ git filter-branch --index-filter \
+    'git ls-files \
+       | grep -v "^yourdirtomigrate/\|^path/to/parents/" \
+       | xargs --no-run-if-empty git rm --cached' \
+    HEAD
+----
++
+NOTE:: If the directory is in the root of your repo, then only `^yourdirtomigrate/`, remove everything until the next `"`, so remove `\|^path/to/parents/`.
+
+. In the target repo:
++
+[,console]
+----
+~$ git remote add <anyname> /path/to/source/repo
+~$ git pull <anyname> <anybranchname>
+----
++
+If you get an error with options you can do, execute `git config pull.rebase true` and repeat the `git pull` command.
+
+Your directory is now copied to the target repository.

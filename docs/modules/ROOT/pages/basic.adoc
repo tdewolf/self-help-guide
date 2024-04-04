@@ -1,0 +1,13 @@
+= Basic git commands
+
+[cols="1,2,4",options="header"]
+|===
+|command | example | description
+
+| add
+a| * git add -A .
+* git add .
+a| * add all untracked files in the repository, regardless the directory from which you execute this command.
+* add all untracked files in the current directory and its subdirectories.
+
+|===
