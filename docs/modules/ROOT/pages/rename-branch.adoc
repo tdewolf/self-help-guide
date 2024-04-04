@@ -1,0 +1,84 @@
+= Rename a branch
+
+== Rename a branch
+
+. On the current branch, rename the branch name:
++
+----
+git branch -m <current-name> <new-name>
+----
+
+. Push new branch name to remote
++
+----
+git push -u origin <new-name>
+----
+
+. On your git server (github), set <new-name> branch as default branch for your project. +
+Only do this if you rename the default branch, f.e. when you rename master to main
+
+. Delete old branch on remote:
++
+----
+git push -u origin :<old-name>
+----
+
+. Set remote HEAD automatically to latest commit on default branch:
++
+----
+git remote set-head origin --auto
+----
+
+
+== Example - Rename master to main
+
+----
+git branch -m master main
+git push -u origin main
+
+#set new default branch on Github
+
+git push -u origin :master
+git remote set-head origin --auto
+----
+Once you have renamed the branch, inform other users that this is done so they can update their local branches.
+
+
+== Remote repository changed name
+
+What to do if the repository name has changed? In this example, the repo name has changed from dgc to dgc-docs.
+
+. Close all applications that have access to your repository (SourceTree, WinSCP, Cyberduck, Explorer, ...)
+. Open a terminal and go to your repo folder
+. Execute the following command:
++
+----
+git remote -v
+----
++
+should look like this:
++
+----
+origin  git@github.com:tdewolf/<old repo>.git (fetch)
+origin  git@github.com:tdewolf/<old repo>.git (push)
+----
+. Execute the following command:
++
+----
+git remote set-url origin git@github.com:tdewolf/<new repo>.git
+----
++
+If the result in step 4 reads HTTPS addresses, use that address and change <old repo>.git to <new repo>.git.
+. Check if all went well:
++
+----
+git remote -v
+----
++
+The output should now look like this:
++
+----
+origin  git@github.com:tdewolf/<new repo>.git (fetch)
+origin  git@github.com:tdewolf/<new repo>.git (push)
+----
+. If that is fine, rename the <old repo> folder to <new repo>.

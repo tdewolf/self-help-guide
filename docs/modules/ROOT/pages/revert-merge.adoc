@@ -1,0 +1,45 @@
+= Revert a committed merge
+
+Revert a merge commit, even if the merge is already pushed and that there's already new commits after the merge (can only be done command line). The merge will be reverted but the commits after the merge will remain!
+
+. First find to which parent you want to return:
++
+----
+git log
+commit 474fdd3bc9e8169b6ade60d8abc601a2fbb70190
+Merge: d02cc6c2c f48a30814
+Author: Thomas De Wolf <thomas.dewolf@collibra.com>
+Date: Mon Apr 25 11:44:00 2022 +0200
+
+Merge branch 'feature/DOC-4223-edge-faq' into release/2022.04
+
+commit f48a30814833ff3d6a5f24ff0e1e188282dccc33
+Author: Thomas De Wolf <thomas.dewolf@collibra.com>
+Date: Mon Apr 25 11:20:25 2022 +0200
+
+DOC-4223 - update public Edge FAQ and new topic about edge components
+
+commit d02cc6c2c48d0dd35854eefc7f2dd4850ab39b1d
+Author: Liesbet Van de Calseyde <liesbet.vandecalseyde@collibra.com>
+Date: Mon Apr 25 10:20:22 2022 +0200
+
+DOC-3949 add note to attribute property
+
+(cherry picked from commit f823a17fb387962de3159e3ea1ae371c670f5ed8)
+----
+
+. On the *Merge* line you see the possible parent hashes, in this example I want to revert to d02cc6c2c:
++
+----
+git revert <merge commit hash> -m 1
+
+#-m 2 if you want to revert to f48a30814
+----
+
+. Accept the merge commit message. To do so: Press Escape (this should make sure you are in command mode). Type in `:wq`  and press Enter.
+
+. Push the new commit
++
+----
+git push
+----

@@ -1,6 +1,6 @@
 = Basic git commands
 
-[cols="1,2,4",options="header"]
+[cols="1,2,3",options="header"]
 |===
 |command | example | description
 
@@ -10,4 +10,41 @@ a| * git add -A .
 a| * add all untracked files in the repository, regardless the directory from which you execute this command.
 * add all untracked files in the current directory and its subdirectories.
 
+| commit
+| git commit -am "commit message"
+| commit changes in your repository for all files
+
+| checkout
+a| * git checkout "branch name"
+* git checkout -b "new branch name"
+a| * switch to branch
+* create new branch and switch to that branch
+
+| diff
+|git diff --check
+| check if there are conflict markers left in the repository
+
+| status
+| git status
+| status of the repository
+
+| fetch
+| git fetch
+| Fetching is what you do when you want to see what everybody else has been working on.
+
+| pull
+| git pull
+| fetch the remote changes and merge them in your local repository
+
+| mergetool
+| git mergetool
+| launch the defined mergetool to resolve merge conflicts
+
+| merge
+| git merge <remote> <local>
+| merge a branch (local or remote) in your currently checked out branch
+
+| push
+| git push
+| push all local commits to the remote branch
 |===

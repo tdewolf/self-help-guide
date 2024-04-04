@@ -1,0 +1,95 @@
+= Advanced git commands
+
+* Show list of all branches that are created in this repo with some colors for readability:
++
+----
+git for-each-ref --sort=-authorname --format='%(color:cyan)%(authordate:relative)   %(color:red)%(authorname)   %(color:white)%(color:bold)%(refname:short)' refs/remotes
+----
+
+* Show the list of all branches that you have created:
++
+----
+git for-each-ref --sort=-authorname --format='%(authordate:relative)   %(authorname)   %(refname:short)' refs/remotes | grep "Thomas"
+•
+•	3 months ago   Thomas De Wolf   origin/0.3.0
+•	3 months ago   Thomas De Wolf   origin/0.4
+•	8 weeks ago   Thomas De Wolf   origin/0.4.2
+•	4 weeks ago   Thomas De Wolf   origin/0.5
+8 weeks ago   Thomas De Wolf   origin/0.5.0
+----
+* Cherry-pick a range of commits:
++
+----
+git cherry-pick <oldest-hash>^..<newest-hash>
+
+//without the "^", the oldest hash is not cherry-picked!
+----
+
+* Find the history of a deleted file:
++
+----
+git log --full-history -- [file path]
+git log --full-history -1 -- [file path] --> for only the last commit
+----
+
+* Find from which branch a branch is created:
++
+----
+git reflog show --no-abbrev <branch name>
+#works only on your local branches that you have been working on
+
+Example:
+
+afb542aec624c959d118b6e3089b40e729882fb4 (HEAD -> 5.7.4, tag: v5.7.4-HOTFIX2-20200318, origin/5.7.4) 5.7.4@{0}: commit: fix filename for fixes F2
+
+4b3e9ab34ad8ba9939866069b82e6353871c8374 5.7.4@{1}: commit: Fix build number of F2 fixes page
+
+4839714fe6d952995a9cab02bb26258dc994b69a 5.7.4@{2}: commit: DOC-1872 - add tip about versions between dgc and jobserver, especially for cloud environments, part 2
+
+...
+
+6dd334bfa1afe0687113dfbd2ce98ba92146b697 5.7.4@{9}: branch: Created from 5.7
+----
++
+If somebody else created the branch and you checked out the branch, the last line will be:
++
+----
+6dd334bfa1afe0687113dfbd2ce98ba92146b697 5.7.4@{38}: branch: Created from refs/remotes/origin/5.7.4
+----
+
+* Check if there are no more merge markers in the branch before committing merge conflicts:
++
+----
+git diff --check
+Example:
+
+tdewolf@THOMASDEWOL838F MINGW64 /C/My Projects/tests/rebasetest (master)
+$ git merge DOC-2000
+Auto-merging development.txt
+CONFLICT (content): Merge conflict in development.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+tdewolf@THOMASDEWOL838F MINGW64 /C/My Projects/tests/rebasetest (master|MERGING)
+$ git diff --check
+development.txt:3: leftover conflict marker
+development.txt:8: leftover conflict marker
+development.txt:10: leftover conflict marker
+----
+
+* Create a new repository from a specific branch
++
+----
+#You first have to create a new empty repository and then:
+
+git push url://to/new/repository.git branch-to-move:new-branch-name
+
+Example:
+
+git push ssh://git@bitbucket.collbira.com/doc/newrepo.git feature/DOC-1234-old-repo:master
+----
+
+* Delete all local branches that no longer exist on remote
++
+----
+git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+----

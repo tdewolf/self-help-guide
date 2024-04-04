@@ -1,1 +1,7 @@
-* xref:index.adoc[Welcome to the StorageMAP Online Help]
+* xref:index.adoc[Git commands]
+* xref:basic.adoc[Basic git commands]
+* xref:advanced.adoc[Advanced git commands]
+* xref:revert-merge.adoc[Revert merge commit]
+* xref:rename-branch.adoc[Rename branch]
+* xref:migrate.adoc[Migrate directories]
+* xref:precommit-hooks.adoc[Pre-commit hooks]

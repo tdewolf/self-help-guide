@@ -1,0 +1,55 @@
+= Pre-commit hooks
+
+You can create pre-commit hooks to ensure that the content that you want to commit contains specific strings.
+
+If any of these strings are missing, you cannot commit, an overview of all missing items will be shown.
+
+. In your project, go to the directory .git/hooks, f.e. *myproject\.git\hooks*.
++
+NOTE:: .git is a hidden folder
+
+. Remove the extension .sample from the file *pre-commit.sample*.
+. Open the file for editing and replace all content with the content below.
+. Save and close the file.
+
+In the following sample pre-commit hook, all htm files (to be defined in `FILES` line) will be checked if they contain specific strings. These strings are defined in the `checks` list of the sample code.
+
+[,bash]
+----
+#!/bin/sh
+
+checks=("meta name=\"category\"" "MadCap:concept" "MadCap:keyword") # create an array
+FILES="\.htm(\..+)?$" # List only htm files
+COUNTER=0 #Counter for errors in commit
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+NC="\033[0m"
+
+echo "Running pre-commit hook"
+git diff --cached --name-status | egrep "$FILES" | while read flag file; do
+if [ "$flag" == 'D' ]; then continue; fi
+
+    for word in "${checks[@]}"
+    do
+        if egrep -q "$word" "$file"; then
+            echo -e "OK: \"${word}\" in file: ${file}"
+        else
+            echo -e "ERROR: \"${word}\" is missing in file: ${file}" >&2
+            COUNTER=$((COUNTER+1))
+        fi
+    done
+
+    if [ "$COUNTER" -eq 0 ]; then
+        echo "All good, committing files..."
+        exit 0
+        else
+            echo "===="
+            echo "$COUNTER errors detected"
+            exit 1
+    fi
+done
+----
+
+The error that appears when something is missing:
+
+image::precommit-hook-errors.png[]
