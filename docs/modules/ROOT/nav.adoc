@@ -1,3 +1,4 @@
+* xref:index.adoc[Git commands]
 * xref:basic.adoc[Basic git commands]
 * xref:advanced.adoc[Advanced git commands]
 * xref:revert-merge.adoc[Revert merge commit]
