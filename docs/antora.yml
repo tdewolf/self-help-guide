@@ -1,6 +1,6 @@
-name: Git
+name: git
 title: Git Commands
-version: 'latest'
+version: 1.0
 nav:
   - modules/ROOT/nav.adoc
   - modules/gitdocs/nav.adoc

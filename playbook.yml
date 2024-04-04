@@ -1,11 +1,11 @@
 site:
   title: Git Commands
-  url: https://localhost:8080
-  start_page: ROOT::index.adoc
+  url: https://example.com
+  start_page: git::index.adoc
 content:
   sources:
-    - url: .
-      branches: ['main']
+    - url: https://github.com/tdewolf/mygitdocs.git
+      branches: HEAD
       start_path: docs
 ui:
   bundle:
