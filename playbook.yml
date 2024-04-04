@@ -1,7 +1,7 @@
 site:
   title: Git Commands
   url: https://localhost:8080
-  start_page: mygitdocs::index.adoc
+  start_page: ROOT::index.adoc
 content:
   sources:
     - url: .
