@@ -3,6 +3,6 @@ title: Self-Help Guide
 version: '1.0'
 # start_page: index.adoc
 nav:
-  - modules/ROOT/nav.adoc
+  # - modules/ROOT/nav.adoc
   - modules/gitdocs/nav.adoc
   - modules/antora/nav.adoc

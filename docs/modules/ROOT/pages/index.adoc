@@ -1,4 +1,7 @@
-= Git Commands
+= Self-Help Guide
 
-These are the git commands that I find useful, which means either I use
-them a lot or I have used them any time in the past.
+In this self-help guide, you can find the most common operations that I have to do to manage my documentation projects, going from git commands to antora configuration, but not limited to these.
+
+I will update this site as needed.
+
+Hope you find something useful here.

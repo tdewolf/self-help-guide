@@ -1,4 +1,4 @@
-= Antora Playbook
+= Antora playbook
 :set-up-playbook: https://docs.antora.org/antora/latest/playbook/set-up-playbook/
 
 An Antora playbook makes it easy for technical writers to control what content is included in your site, what user interface (UI) is applied to it, and where the site is published using a playbook file. The settings in the playbook file, in combination with CLI options and environment variables, tell Antora how to operate.
