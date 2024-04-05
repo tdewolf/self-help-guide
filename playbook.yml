@@ -2,8 +2,9 @@ site:
   title: Self-Help Guide
   url: https://example.com
   start_page: shg::index.adoc
-  # keys:
-  #   google_analytics: <gtag>
+  # google tags: see couchbase docs for example
+  # keys: 
+  #   google_analytics: GTM-032462
 content:
   sources:
     - url: .
