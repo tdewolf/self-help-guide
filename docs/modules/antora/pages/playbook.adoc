@@ -1,0 +1,25 @@
+= Antora Playbook
+:set-up-playbook: https://docs.antora.org/antora/latest/playbook/set-up-playbook/
+
+An Antora playbook makes it easy for technical writers to control what content is included in your site, what user interface (UI) is applied to it, and where the site is published using a playbook file. The settings in the playbook file, in combination with CLI options and environment variables, tell Antora how to operate.
+
+You can find the general information in the {set-up-playbook}[Antora documentation].
+
+The only thing I struggled with quite often was the following error when building the site:
+
+----
+~/github/mygitdocs main !1 > npx antora playbook.yml
+[07:47:04.510] WARN (@antora/content-classifier): Start page specified for site not found: docs::index.adoc
+----
+
+The error came from bad configuration in the playbook `start_page` configuration. This should be the name of the component and the index.adoc page in `ROOT\pages` folder.
+
+You find the name of the component in its `antora.yml` file under the `name` key.
+
+When you have changed that and you want to test, make sure to run the following command:
+
+----
+npx antora --clean --fetch playbook.yml
+----
+
+When you run `npx antora playbook.yml`, you will get the same error but maybe with an updated path.

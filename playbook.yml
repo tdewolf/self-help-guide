@@ -1,10 +1,13 @@
 site:
-  title: Git Commands
+  title: Self-Help Guide
   url: https://example.com
-  start_page: git:ROOT:index.adoc
+  start_page: shg::index.adoc
+  # keys:
+  #   google_analytics: <gtag>
 content:
   sources:
-    - url: https://github.com/tdewolf/mygitdocs.git
+    - url: .
+    # - url: https://github.com/tdewolf/self-help-guide.git
       branches: HEAD
       start_path: docs
 ui:
