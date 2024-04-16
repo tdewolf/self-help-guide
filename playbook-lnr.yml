@@ -1,0 +1,21 @@
+site:
+  title: Self-Help Guide
+  url: https://example.com
+  start_page: shg::index.adoc
+  # google tags: see couchbase docs for example
+  # keys: 
+  #   google_analytics: GTM-032462
+content:
+  sources:
+    - url: .
+    # - url: https://github.com/tdewolf/self-help-guide.git
+      branches: HEAD
+      start_path: docs
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files: ./supplemental-ui
+antora:
+  extensions:
+    - '@antora/lunr-extension'
