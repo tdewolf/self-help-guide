@@ -18,4 +18,4 @@ ui:
   supplemental_files: ./supplemental-ui
 antora:
   extensions:
-    - '@antora/lunr-extension'
+    # - '@antora/lunr-extension'
