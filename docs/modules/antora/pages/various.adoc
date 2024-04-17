@@ -1,0 +1,32 @@
+= Various
+
+Some various content about using and customizing Antora.
+
+== No default page layout
+
+=== Issue
+
+Building your documentation project fails with error 'No default page layout'.
+
+=== Cause
+
+Create ui-bundle.zip file is empty (22 bytes), most likely because there are some missing files in the root of the repo, f.e. .stylelintrc and .eslintrc
+
+=== Resolution
+
+When you start from the link:https://gitlab.com/antora/antora-ui-default.git[default antora ui project], ensure that you have all files in your repo. During the packaging of ui-bundle.zip, the files that will be included will be checked by a linter. If the lint configurations are not available, no files are added and will result in an empty zip file.
+
+
+== CSS changes not applied
+
+=== Issue
+
+When you customize the UI, you have to apply changes to the files in src/ folder, f.e. src/css or src/partials. However, when creating the new bundle and building the documentation again, you don't see the changes.
+
+=== Cause
+
+The ui-bundle.zip file contains the public folder instead of the src folder.
+
+=== Resolution
+
+Before packaging ui-bundle.zip, ensure that you have removed the public folder from the root of the repository.

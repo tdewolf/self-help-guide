@@ -1,2 +1,3 @@
 .Antora troubleshooting
 * xref:playbook.adoc[Playbook troubleshooting]
+* xref:various.adoc[Various]
