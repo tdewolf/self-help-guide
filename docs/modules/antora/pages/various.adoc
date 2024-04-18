@@ -40,11 +40,11 @@ Xref link does not work.
 
 === Cause
 
-Incorrect definition of the xref link.
+You used the relative path to the target.
 
 === Resolution
 
-Creating xref links to other modules does not work when pointing to the path location.
+Creating xref links to other modules does not work when using the relative path to the target.
 
 Instead use the following structure:
 
