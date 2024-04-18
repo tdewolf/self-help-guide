@@ -30,3 +30,26 @@ The ui-bundle.zip file contains the public folder instead of the src folder.
 === Resolution
 
 Before packaging ui-bundle.zip, ensure that you have removed the public folder from the root of the repository.
+
+
+== Target not found
+
+=== Issue
+
+Xref link does not work.
+
+=== Cause
+
+Incorrect definition of the xref link.
+
+=== Resolution
+
+Creating xref links to other modules does not work when pointing to the path location.
+
+Instead use the following structure:
+
+```
+xref:<version>@<component>:<module>:<page>.adoc[<optional display text>]
+```
+
+Where all values are optional. Go to the https://docs.antora.org/antora/latest/page/page-links/[Antora documentation] for more details.
