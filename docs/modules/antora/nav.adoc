@@ -1,3 +1,4 @@
 .Antora troubleshooting
 * xref:playbook.adoc[Playbook troubleshooting]
+* xref:ui-macros.adoc[UI macros]
 * xref:various.adoc[Various]

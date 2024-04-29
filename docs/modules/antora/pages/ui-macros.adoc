@@ -1,0 +1,18 @@
+= UI Macros
+:experimental:
+
+== Button syntax
+
+Press btn:[Submit] to send your responses.
+
+
+== Keyboard keys
+
+Press kbd:[Ctrl+C] to copy the selection to the clipboard.
+
+
+== Menu syntax
+
+Go to menu:File[Save] to save the changes.
+
+Go to menu:File[Share,Messages]
