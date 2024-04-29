@@ -1,6 +1,6 @@
 name: shg
 title: Self-Help Guide
-version: '1.0'
+version: release/(*)/*: $1
 # start_page: index.adoc
 nav:
   # - modules/ROOT/nav.adoc
