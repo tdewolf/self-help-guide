@@ -2,9 +2,10 @@ site:
   title: Self-Help Guide
   url: https://example.com
   start_page: shg::index.adoc
+  robots: allow
   # google tags: see couchbase docs for example
   # keys: 
-  #   google_analytics: GTM-032462
+  #   google_analytics: 'GTM-032462'
 content:
   sources:
     - url: .
@@ -18,4 +19,7 @@ ui:
   supplemental_files: ./supplemental-ui
 antora:
   extensions:
-    - '@antora/lunr-extension'
+  - '@antora/lunr-extension'
+  - require: './lib/unused-sources.js'
+    add_to_navigation: true
+    unlisted_pages_heading: Orphans

@@ -16,3 +16,11 @@ Press kbd:[Ctrl+C] to copy the selection to the clipboard.
 Go to menu:File[Save] to save the changes.
 
 Go to menu:File[Share,Messages]
+
+
+== Sidebars
+
+This is a sidebar:
+
+[sidebar]
+Sidebars are used to visually separate text to supplement the main text.
