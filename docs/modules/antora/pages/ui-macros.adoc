@@ -1,5 +1,7 @@
 = UI Macros
 :experimental:
+:icons: font
+:iconmacro: https://docs.asciidoctor.org/asciidoc/latest/macros/icon-macro/
 
 == Button syntax
 
@@ -24,3 +26,20 @@ This is a sidebar:
 
 [sidebar]
 Sidebars are used to visually separate text to supplement the main text.
+
+
+== Font awesome icons
+
+You can easily add fontawesome icons in your sources. To do so:
+
+. Add at the top of the page: `:icon: font`.
+. In your source add an icon: \icon:fontawesomename[] +
+where <fontawesomename> is the fontawesome icon name. You can find the list of icons and their corresponding names on this page: https://fontawesome.com/v4/icons/.
+
+The advantage of adding icons this way in your sources is that you can add attributes to the icon, for example, change the size or the color.
+
+EXAMPLE:: \icon:heart[role=red] results in a red heart icon in the output: icon:heart[role=red].
+
+NOTE:: IntelliJ only shows the icon, not the attributes.
+
+For more information about the icon macro, go to the Asciidoctor link:iconmacro[Icon macro] documentation.
