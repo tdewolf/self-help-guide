@@ -32,7 +32,7 @@ Sidebars are used to visually separate text to supplement the main text.
 
 You can easily add fontawesome icons in your sources. To do so:
 
-. Add at the top of the page: `:icon: font`.
+. Add at the top of the page: `:icons: font`.
 . In your source add an icon: \icon:fontawesomename[] +
 where <fontawesomename> is the fontawesome icon name. You can find the list of icons and their corresponding names on this page: https://fontawesome.com/v4/icons/.
 
@@ -43,3 +43,28 @@ EXAMPLE:: \icon:heart[role=red] results in a red heart icon in the output: icon:
 NOTE:: IntelliJ only shows the icon, not the attributes.
 
 For more information about the icon macro, go to the Asciidoctor link:iconmacro[Icon macro] documentation.
+
+=== Most used font-awesome icons
+
+[options="header"]
+|===
+| name | icon
+
+| plus | icon:plus[]
+| minus | icon:minus[]
+| arrow-up | icon:arrow-up[]
+| arrow-down | icon:arrow-down[]
+| arrow-left | icon:arrow-left[]
+| arrow-right | icon:arrow-right[]
+| check | icon:check[]
+| close | icon:close[]
+| toggle-on | icon:toggle-on[]
+| toggle-off | icon:toggle-off[]
+| upload | icon:upload[]
+| download | icon:download[]
+| cog | icon:cog[]
+| refresh | icon:refresh[]
+| bar-chart | icon:bar-chart[]
+| angle-down, angle-left, angle-right, angle-up | icon:angle-down[], icon:angle-left[], icon:angle-right[], icon:angle-up[]
+| arrows | icon:arrows[]
+|===
