@@ -1,1 +1,1 @@
-* xref:index.adoc[Git commands]
+* xref:index.adoc[]
