@@ -1,5 +1,14 @@
 {
   "dependencies": {
     "@antora/lunr-extension": "^1.0.0-alpha.8"
+  },
+  "devDependencies": {
+    "@asciidoctor/core": "~2.2",
+    "@asciidoctor/tabs": "1.0.0-beta.3",
+    "@fortawesome/fontawesome-free": "~5.13",
+    "@fortawesome/fontawesome-svg-core": "~1.2",
+    "@fortawesome/free-brands-svg-icons": "~5.13",
+    "@fortawesome/free-regular-svg-icons": "~5.13",
+    "@fortawesome/free-solid-svg-icons": "~5.13"
   }
 }
