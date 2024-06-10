@@ -1,11 +1,49 @@
 = Admonitions
 
+== Simple Admonitions
+
+```
 WARNING: Wolpertingers are known to nest in server racks. Enter at your own risk.
+```
+
+WARNING: Wolpertingers are known to nest in server racks. Enter at your own risk.
+
+```
+TIP: Inform the animal extinction team to clean up the wolpertingers.
+```
 
 TIP: Inform the animal extinction team to clean up the wolpertingers.
 
+```
 IMPORTANT: It's important to do so as soon as possible.
+```
+
+IMPORTANT: It's important to do so as soon as possible.
+
+```
+CAUTION: Be careful when opening a server rack with wolpertingers.
+```
 
 CAUTION: Be careful when opening a server rack with wolpertingers.
 
 See also xref:blocks:007-delimited-blocks.adoc[].
+
+If you want to add lists or multiple paragraphs in an admonition, then use the following formatting:
+
+```
+[NOTE]
+====
+* Foo
+* Bar
+* Baz
+====
+```
+
+Resulting in:
+
+[NOTE]
+====
+* Foo
+* Bar
+* Baz
+====
