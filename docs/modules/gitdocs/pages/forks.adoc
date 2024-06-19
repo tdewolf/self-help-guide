@@ -1,0 +1,69 @@
+:experimental:
+:icons: font
+
+= Forks
+
+== Create a fork
+
+This applies to forking a github repo:
+
+. On GitHub.com, navigate to the repository that you want to fork.
+. In the top-right corner of the page, click btn:[Fork].
+. Under "Owner," select the dropdown menu and click an owner for the forked repository.
+. By default, forks are named the same as their upstream repositories. Optionally, to further distinguish your fork, in the *Repository name* field, type a name.
+. Optionally, in the *Description* field, type a description of your fork.
+. Optionally, select *Copy the DEFAULT branch only*. +
+For many forking scenarios, such as contributing to open-source projects, you only need to copy the default branch. If you do not select this option, all branches will be copied into the new fork.
+. Click btn:[Create fork].
+
+
+== Syncing a fork branch from the command line
+
+Before you can sync your fork with an upstream repository, you must configure a remote that points to the upstream repository in Git. For more information, see "Configuring a remote repository for a fork."
+
+. Open Terminal.
+. Change the current working directory to your local project.
+. Fetch the branches and their respective commits from the upstream repository. Commits to BRANCH-NAME will be stored in the local branch upstream/BRANCH-NAME.
++
+----
+$ git fetch upstream
+> remote: Counting objects: 75, done.
+> remote: Compressing objects: 100% (53/53), done.
+> remote: Total 62 (delta 27), reused 44 (delta 9)
+> Unpacking objects: 100% (62/62), done.
+> From https://github.com/ORIGINAL-OWNER/ORIGINAL-REPOSITORY
+>  * [new branch]      main     -> upstream/main
+----
+. Check out your fork's local default branch - in this case, we use main.
++
+----
+$ git checkout main
+> Switched to branch 'main'
+----
+. Merge the changes from the upstream default branch - in this case, upstream/main - into your local default branch. This brings your fork's default branch into sync with the upstream repository, without losing your local changes.
++
+----
+$ git merge upstream/main
+> Updating a422352..5fdff0f
+> Fast-forward
+>  README                    |    9 -------
+>  README.md                 |    7 ++++++
+>  2 files changed, 7 insertions(+), 9 deletions(-)
+>  delete mode 100644 README
+>  create mode 100644 README.md
+----
++
+If your local branch didn't have any unique commits, Git will perform a fast-forward. For more information, see Basic Branching and Merging in the Git documentation.
++
+----
+$ git merge upstream/main
+> Updating 34e91da..16c56ad
+> Fast-forward
+>  README.md                 |    5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
+If your local branch had unique commits, you may need to resolve conflicts. For more information, see "Addressing merge conflicts."
+----
+
+TIP: Syncing your fork only updates your local copy of the repository. To update your fork on GitHub.com, you must push your changes.
+
+Press alt+up to activate
