@@ -34,6 +34,12 @@ You can also use the internal xref macro.
 Link to file relative to current document: +
 xref:004-lists.adoc[]
 
+You can also create cross references to other components, modules and even versions of components.
+
+```
+xref:<version>@<component>:<module>:file.adoc#<section>[text label]
+```
+
 == Images
 
 ----
