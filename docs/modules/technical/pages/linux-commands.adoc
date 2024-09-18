@@ -1,0 +1,17 @@
+:icons: font
+
+= Linux Commands
+
+== SSH
+
+* Connect to ssh via a specific port:
++
+====
+ssh -p <port> <user>@<ip address>
+====
+
+* Connect to ssh without having to enter the password:
++
+====
+ssh-copy-id -i path/to/id_rsa.pub user@ipaddress
+====

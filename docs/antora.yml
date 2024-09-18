@@ -7,8 +7,10 @@ nav:
 #  - modules/ROOT/nav.adoc
   - modules/markup/nav-markup.adoc
   - modules/blocks/nav-blocks.adoc
-  - modules/gitdocs/nav.adoc
   - modules/antora/nav.adoc
+  - modules/gitdocs/nav.adoc
+  - modules/technical/nav.adoc
+
 asciidoc:
   attributes:
     company: 'SHEET Consultancy'
