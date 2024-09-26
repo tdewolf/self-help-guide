@@ -15,3 +15,10 @@ ssh -p <port> <user>@<ip address>
 ====
 ssh-copy-id -i path/to/id_rsa.pub user@ipaddress
 ====
++
+The longer version of this is:
++
+====
+. Copy the .pub file to your target machine.
+. On the target machine: `cat id_rsa.pub >> ~/.ssh/authorized_keys`
+====

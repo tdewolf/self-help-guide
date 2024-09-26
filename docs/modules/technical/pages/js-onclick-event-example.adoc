@@ -1,0 +1,24 @@
+:icons: font
+
+= Count clicks
+
+If you have files that you can download from a page and you want to track how many times visitors have clicked the download link, you can add a small piece of Javascript and call it in the hyperlink definition.
+
+The JS to be added to your page:
+
+[soruce,js]
+----
+include::example$js-onclick-event.js[]
+----
+
+A regular hyperlink has the following format:
+
+----
+<a href="https://www.example.com">Your text here</a>
+----
+
+Now you can add an `onclick` argument that calls the Javascript function, in the above example, the function is called `sendEvent`.
+
+----
+<a onclick="sendEvent('your custom param')" href="https://www.example.com">Your text here</a>
+----
