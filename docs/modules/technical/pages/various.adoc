@@ -1,0 +1,12 @@
+:icons: font
+
+= Various
+
+== Ringtone duration
+
+Most of the mobile operators in Belgium use a 15 second dialing duration before they forward the call to voice mail. To change the duration, dial these codes:
+
+* Proximus: **61*+32475151516*11*30# or **61*+32475151516**30#
+* Base: **61*+32486191933**30# or *61*+32486191933**30#
+* Mobistar: **61*5555**30#
+* Telenet: **61*5555**30#
