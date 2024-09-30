@@ -1,55 +1,45 @@
+:experimental:
+:icons: font
+
 = Various
 
-Some various content about using and customizing Antora.
+== Conditionals
 
-== No default page layout
+You can add conditional content with the `ifdef` and `ifndef` macros.
 
-=== Issue
+This can be helpful when single-sourcing when there are bits that should be shown in one situation and hidden in another.
 
-Building your documentation project fails with error 'No default page layout'.
+For the full documentation, go to the link:https://docs.asciidoctor.org/asciidoc/latest/directives/ifdef-ifndef/[asciidoctor documentation].
 
-=== Cause
+A simple example would be the usage of showing content in html but not in pdf.
 
-Create ui-bundle.zip file is empty (22 bytes), most likely because there are some missing files in the root of the repo, f.e. .stylelintrc and .eslintrc
+----
+ifdef::pdf[]
+Do only show in PDF output
+endif::pdf[]
+----
 
-=== Resolution
+In some situations, the `pdf` part is a variable that is set at the top of the page and the content between the `ifdef` and `endif` directives is a partial.
 
-When you start from the link:https://gitlab.com/antora/antora-ui-default.git[default antora ui project], ensure that you have all files in your repo. During the packaging of ui-bundle.zip, the files that will be included will be checked by a linter. If the lint configurations are not available, no files are added and will result in an empty zip file.
+Your source could look like this:
 
+----
+:pdf:
 
-== CSS changes not applied
+= heading 1
 
-=== Issue
+ifdef::pdf[]
+include::partial$a-partial-here.adoc[]
+endif::pdf[]
+----
 
-When you customize the UI, you have to apply changes to the files in src/ folder, f.e. src/css or src/partials. However, when creating the new bundle and building the documentation again, you don't see the changes.
-
-=== Cause
-
-The ui-bundle.zip file contains the public folder instead of the src folder.
-
-=== Resolution
-
-Before packaging ui-bundle.zip, ensure that you have removed the public folder from the root of the repository.
+Now, it is possible to set a directive just before a section, but then that directive remains active for all subsequent content and asciidoc files (following the index or navigation file). If the directive should be reset after being used, you have to reset it. In the following example, we use a new images directory for a specific section (`:imagesdir: rest/`), but then reset it to the original one. To do so, you first store the original images directory in another variable (`:originalimagesdir: {imagesdir}`) and then assign this new variable back to the original one (`:imagesdir: {originalimagesdir}`).
 
 
-== Target not found
-
-=== Issue
-
-Xref link does not work.
-
-=== Cause
-
-You used the relative path to the target.
-
-=== Resolution
-
-Creating xref links to other modules does not work when using the relative path to the target.
-
-Instead use the following structure:
-
-```
-xref:<version>@<component>:<module>:<page>.adoc[<optional display text>]
-```
-
-Where all values are optional. Go to the https://docs.antora.org/antora/latest/page/page-links/[Antora documentation] for more details.
+----
+:originalimagesdir: {imagesdir}
+:imagesdir: rest/
+include::rest/resources.adoc[]
+include::rest/types.adoc[]
+:imagesdir: {originalimagesdir}
+----
