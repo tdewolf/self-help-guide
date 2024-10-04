@@ -1,4 +1,25 @@
-= Revert a committed merge
+= Undo actions in Git
+
+== Undo commits
+
+* Undo the last commit keeping the changes:
++
+----
+git reset HEAD~1
+
+or
+
+git reset --soft HEAD^
+----
+
+* Undo the last commit discarding all changes:
++
+----
+git reset --hard HEAD^
+----
+
+
+== Revert a committed merge
 
 Revert a merge commit, even if the merge is already pushed and that there's already new commits after the merge (can only be done command line). The merge will be reverted but the commits after the merge will remain!
 
