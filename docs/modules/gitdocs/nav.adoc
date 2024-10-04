@@ -1,7 +1,7 @@
 .Git help
 * xref:basic.adoc[Basic git commands]
 * xref:advanced.adoc[Advanced git commands]
-* xref:undo-actions.adoc[Revert merge commit]
+* xref:undo-actions.adoc[Undo git actions]
 * xref:rename-branch.adoc[Rename branch]
 * xref:forks.adoc[Forking repos]
 * xref:migrate.adoc[Migrate directories]
