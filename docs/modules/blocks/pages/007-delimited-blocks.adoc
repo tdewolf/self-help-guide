@@ -80,3 +80,13 @@ This is aside text.
 
 It is used to present information related to the main content.
 --
+
+== TOC block
+
+You can add a page TOC at the top of your page by adding the following snippet at the top of your asciidoc page:
+
+----
+ifndef::env-idea[]
+:toc: left
+endif::env-idea[]
+----
