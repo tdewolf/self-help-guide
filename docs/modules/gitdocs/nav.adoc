@@ -3,5 +3,6 @@
 * xref:advanced.adoc[Advanced git commands]
 * xref:revert-merge.adoc[Revert merge commit]
 * xref:rename-branch.adoc[Rename branch]
+* xref:forks.adoc[Forking repos]
 * xref:migrate.adoc[Migrate directories]
 * xref:precommit-hooks.adoc[Pre-commit hooks]
