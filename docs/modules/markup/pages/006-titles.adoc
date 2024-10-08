@@ -1,6 +1,8 @@
 = Titles
 :sectnums:
 
+NOTE: You can also use `:numbered:` as page decoration to make the titles numbered titles.
+
 There are 3 types of titles in Asciidoc:
 
 .Asciidoc title types
