@@ -10,7 +10,7 @@ content:
   sources:
     - url: .
     # - url: https://github.com/tdewolf/self-help-guide.git
-      branches: [HEAD, 'release/1.0']
+      branches: ['main', 'release/1.0']
       start_path: docs
 ui:
   bundle:
