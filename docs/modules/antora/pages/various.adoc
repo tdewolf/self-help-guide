@@ -32,7 +32,7 @@ Your source could look like this:
 = heading 1
 
 \ifdef::pdf[]
-\\include::partial$a-partial-here.adoc[]
+\include::partial$a-partial-here.adoc[]
 \endif::pdf[]
 ....
 
