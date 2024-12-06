@@ -34,7 +34,7 @@ You can easily add fontawesome icons in your sources. To do so:
 
 . Add at the top of the page: `:icons: font`.
 . In your source add an icon: \icon:fontawesomename[] +
-where <fontawesomename> is the fontawesome icon name. You can find the list of icons and their corresponding names on this page: https://fontawesome.com/v4/icons/.
+where <fontawesomename> is the fontawesome icon name. You can find the list of icons and their corresponding names on this page: https://fontawesome.com/v6/icons/.
 
 The advantage of adding icons this way in your sources is that you can add attributes to the icon, for example, change the size or the color.
 
@@ -67,4 +67,11 @@ For more information about the icon macro, go to the Asciidoctor link:iconmacro[
 | bar-chart | icon:bar-chart[]
 | angle-down, angle-left, angle-right, angle-up | icon:angle-down[], icon:angle-left[], icon:angle-right[], icon:angle-up[]
 | arrows | icon:arrows[]
+| caret-up | icon:caret-up[]
+| caret-down | icon:caret-down[]
+| ellipsis | icon:ellipsis[]
+| ellipsis-h | icon:ellipsis-h[]
+| pen-to-square | icon:pen-to-square[]
+| play | icon:play[]
+| stop | icon:stop[]
 |===

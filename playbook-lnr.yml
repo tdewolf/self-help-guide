@@ -24,3 +24,6 @@ antora:
   - require: './lib/unused-sources.js'
     add_to_navigation: false
     unlisted_pages_heading: Orphans
+asciidoc:
+  attributes:
+    online-help: ''

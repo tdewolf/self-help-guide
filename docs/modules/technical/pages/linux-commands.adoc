@@ -22,3 +22,12 @@ The longer version of this is:
 . Copy the .pub file to your target machine.
 . On the target machine: `cat id_rsa.pub >> ~/.ssh/authorized_keys`
 ====
+
+
+== Run commands on files in a directory
+
+====
+for f in *.svg; do svg2png -w 250 -h 250 $f `basename $f .svg`.png; done
+====
+
+where `basename $f .svg`.png replaces the original extension by a new extension, in this example from svg to png.
