@@ -8,6 +8,8 @@
 +
 ====
 ssh -p <port> <user>@<ip address>
+
+#for scp, it is -P instead of -p to define the port
 ====
 
 * Connect to ssh without having to enter the password:
