@@ -4,6 +4,16 @@
 
 == SSH
 
+* Rotate SSH key for Datadobi Gitlab:
++
+If your SSH key to access the Datadobi gitlab (scm.datadobi.net), you have to create a new one and add it in the list of SSH keys on gitlab. Since your username is your LDAP (firstname.lastname), you have to provide this name during the creation. Preferably, you can also add a more meaningful name.
++
+====
+ssh-keygen -t <key-format> -C "<gitlab username>"
+
+ssh-keygen -t ed25519 -C "thomas.dewolf"
+====
+
 * Connect to ssh via a specific port:
 +
 ====
