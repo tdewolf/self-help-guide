@@ -1,0 +1,35 @@
+:icons: font
+:experimental:
+
+= Basic Isilon Commands
+
+Manage shares and exports on a PowerScale/Isilon system.
+
+== SMB Shares
+
+[cols="45,55",options=header]
+|===
+| Action
+| Command
+
+| List shares
+a|
+----
+isi smb shares list
+----
+|===
+
+
+== NFS Exports
+
+[cols="45,55",options=header]
+|===
+| Action
+| Command
+
+| List exports
+a|
+----
+isi nfs exports list
+----
+|===

@@ -4,10 +4,22 @@
 
 == SSH
 
+* Rotate SSH key for Datadobi Gitlab:
++
+If your SSH key to access the Datadobi gitlab (scm.datadobi.net), you have to create a new one and add it in the list of SSH keys on gitlab. Since your username is your LDAP (firstname.lastname), you have to provide this name during the creation. Preferably, you can also add a more meaningful name.
++
+====
+ssh-keygen -t <key-format> -C "<gitlab username>"
+
+ssh-keygen -t ed25519 -C "thomas.dewolf"
+====
+
 * Connect to ssh via a specific port:
 +
 ====
 ssh -p <port> <user>@<ip address>
+
+#for scp, it is -P instead of -p to define the port
 ====
 
 * Connect to ssh without having to enter the password:
@@ -22,3 +34,12 @@ The longer version of this is:
 . Copy the .pub file to your target machine.
 . On the target machine: `cat id_rsa.pub >> ~/.ssh/authorized_keys`
 ====
+
+
+== Run commands on files in a directory
+
+====
+for f in *.svg; do svg2png -w 250 -h 250 $f `basename $f .svg`.png; done
+====
+
+where `basename $f .svg`.png replaces the original extension by a new extension, in this example from svg to png.
