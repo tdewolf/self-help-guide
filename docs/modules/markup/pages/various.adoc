@@ -54,10 +54,10 @@ For example, if you have a topic (toBeIncluded.adoc) with 3 paragraphs, and you 
 In toBeIncluded.adoc, apply a tag (`topicB-only`) to the relevant paragraphs:
 
 ====
-tag::topicB-only[]
+tag::topicB-only[] +
 My paragraph 1
 
-My paragraph 2
+My paragraph 2 +
 end::topicB-only[]
 
 My paragraph 3
