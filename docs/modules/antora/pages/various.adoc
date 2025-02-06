@@ -43,3 +43,36 @@ Now, it is possible to set a directive just before a section, but then that dire
 \include::rest/types.adoc[]
 :imagesdir: {originalimagesdir}
 ----
+
+
+== Select content to be included
+
+If you use the `include` directive, you include the full file that you selected. However, you can apply tags on the source to make a selective include.
+
+For example, if you have a topic (toBeIncluded.adoc) with 3 paragraphs, and you want to include all 3 in one topic (topicA.adoc) but only the first two in another topic (topicB.adoc), then you need to apply tags.
+
+In toBeIncluded.adoc, apply a tag (`topicB-only`) to the relevant paragraphs:
+
+====
+tag::topicB-only[]
+My paragraph 1
+
+My paragraph 2
+end::topicB-only[]
+
+My paragraph 3
+====
+
+To include all content to topicA.adoc:
+
+====
+\include::toBeIncluded.adoc[tag=**]
+====
+
+To include only the tagged content in topicB.adoc:
+
+====
+\include::toBeIncluded.adoc[tag=topicB-only]
+====
+
+For more information, see the https://docs.asciidoctor.org/asciidoc/latest/directives/include-tagged-regions/[asciidoctor documentation].
