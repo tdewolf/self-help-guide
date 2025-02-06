@@ -2,3 +2,5 @@
 * xref:002-admonitions.adoc[]
 * xref:003-formatting-text.adoc[]
 * xref:006-titles.adoc[]
+* xref:ui-macros.adoc[]
+* xref:various.adoc[]
