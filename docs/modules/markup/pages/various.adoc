@@ -53,26 +53,71 @@ For example, if you have a topic (toBeIncluded.adoc) with 3 paragraphs, and you 
 
 In toBeIncluded.adoc, apply a tag (`topicB-only`) to the relevant paragraphs:
 
-====
-tag::topicB-only[] +
+----
+tag::topicB-only[]
 My paragraph 1
 
-My paragraph 2 +
+My paragraph 2
 end::topicB-only[]
 
 My paragraph 3
-====
+----
 
 To include all content to topicA.adoc:
 
-====
+----
 \include::toBeIncluded.adoc[tag=**]
-====
+----
 
 To include only the tagged content in topicB.adoc:
 
-====
+----
 \include::toBeIncluded.adoc[tag=topicB-only]
-====
+----
 
 For more information, see the https://docs.asciidoctor.org/asciidoc/latest/directives/include-tagged-regions/[asciidoctor documentation].
+
+
+== Including content from another repository
+
+If you have topics that must be shared between different repositories, you can still share them as if they were in the same repository. The downside is that you will not see the content of the included topic if the topic is saved in the other repo.
+
+To do so, you must use the same structure in both repositories, so don't mix an antora repo structure with a non-antora structure.
+
+Suppose we store the shared content in RepositoryA in a `shared` project.
+
+
+=== Example
+
+----
+RepositoryA
+ `- docs
+    `- projectA1
+       `- modules
+          `- ROOT
+             `- pages
+                `- repoA-pA1-topic1.adoc
+    `- shared
+       `- modules
+          `- ROOT
+             `- partials
+                `- shared-content.adoc
+----
+
+----
+RepositoryB
+ `- docs
+    `- projectB1
+       `- modules
+          `- ROOT
+             `- pages
+                `- repoB-pB1-topic1.adoc
+----
+
+If you want to include the shared-content.adoc in the topic repoB-pB1-topic1.adoc, you can do:
+
+----
+\include::shared::partial$shared-content.adoc[]
+----
+
+You will get an error that the file cannot be resolved but if they would be combined in the same playbook, then the included file will show up in the repoB-pB1-topic1.adoc topic.
