@@ -43,3 +43,13 @@ for f in *.svg; do svg2png -w 250 -h 250 $f `basename $f .svg`.png; done
 ====
 
 where `basename $f .svg`.png replaces the original extension by a new extension, in this example from svg to png.
+
+== Add user to sudoers
+
+Run as root and replace <username> by the username that you want to add.
+
+====
+echo ' username ALL=(ALL)   ALL' >> /etc/sudoers
+====
+
+
