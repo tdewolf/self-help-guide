@@ -7,26 +7,26 @@
 | add
 a| * git add -A .
 * git add .
-a| * add all untracked files in the repository, regardless the directory from which you execute this command.
-* add all untracked files in the current directory and its subdirectories.
+a| * Add all untracked files in the repository, regardless the directory from which you execute this command.
+* Add all untracked files in the current directory and its subdirectories.
 
 | commit
 | git commit -am "commit message"
-| commit changes in your repository for all files
+| Commit changes in your repository for all files.
 
 | checkout
-a| * git checkout "branch name"
-* git checkout -b "new branch name"
-a| * switch to branch
-* create new branch and switch to that branch
+a| * git checkout "<branch name>"
+* git checkout -b "<new branch name>"
+a| * Switch to existing branch.
+* Create new branch and switch to that branch.
 
 | diff
 |git diff --check
-| check if there are conflict markers left in the repository
+| Check if there are conflict markers left in the repository.
 
 | status
 | git status
-| status of the repository
+| Get the status of the repository.
 
 | fetch
 | git fetch
@@ -34,17 +34,23 @@ a| * switch to branch
 
 | pull
 | git pull
-| fetch the remote changes and merge them in your local repository
+| Fetch the remote changes and merge them in your local repository.
 
 | mergetool
 | git mergetool
-| launch the defined mergetool to resolve merge conflicts
+| Launch the defined mergetool to resolve merge conflicts
 
 | merge
 | git merge <remote> <local>
-| merge a branch (local or remote) in your currently checked out branch
+| Merge a branch (local or remote) in your currently checked out branch.
 
 | push
 | git push
-| push all local commits to the remote branch
+| Push all local commits to the remote branch.
+
+| tag
+a| git tag -a <tag> -m "<tag message>"
+
+push tag to remote: `git push origin <tag>`
+| Create a tag in a repo and push it to the remote.
 |===
