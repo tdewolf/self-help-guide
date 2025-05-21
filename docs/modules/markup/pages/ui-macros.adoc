@@ -1,7 +1,8 @@
-= UI Macros
 :experimental:
 :icons: font
 :iconmacro: https://docs.asciidoctor.org/asciidoc/latest/macros/icon-macro/
+
+= UI Macros
 
 == Button syntax
 
@@ -15,9 +16,9 @@ Press kbd:[Ctrl+C] to copy the selection to the clipboard.
 
 == Menu syntax
 
-Go to menu:File[Save] to save the changes.
+Go to \menu:File[Save] to save the changes.
 
-Go to menu:File[Share,Messages]
+Go to \menu:File[Share,Messages]
 
 
 == Sidebars

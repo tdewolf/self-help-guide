@@ -1,0 +1,17 @@
+:icons: font
+:experimental:
+
+= Used icons in StorageMAP
+
+The following is a list of icons that are used in Datadobi's StorageMAP
+
+[cols="5,15,80",options="header"]
+|===
+| Icon
+| fa name
+| SMAP location
+
+| icon:bolt-lightning[]
+| bolt-lightning
+| In action column of a jobs overview table to go to a running automation task
+|===
