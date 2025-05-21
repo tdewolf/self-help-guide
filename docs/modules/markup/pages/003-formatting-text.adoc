@@ -52,17 +52,17 @@ They follow the same structure as any other macro in asciidoc.
 | Syntax
 | Result
 
-a| `btn:[OK]`
+a| `\btn:[OK]`
 
-If you want to add an icon as button, you have to escape the closing square bracket of the icon macro: `btn:[icon[plus\]]`
+If you want to add an icon as button, you have to escape the closing square bracket of the icon macro: `\btn:[icon[plus\]]`
 | btn:[OK] or btn:[icon:plus[\]]
 
-| `menu:File[Open]` or with more levels `menu:File[Share > Mail]`
+| `\menu:File[Open]` or with more levels `\menu:File[Share > Mail]`
 | menu:File[Open] or menu:File[Share > Mail]
 
-| `kbd:[F11]`
+| `\kbd:[F11]`
 | kbd:[F11]
 
-| `icon:plus[]` or `icon:heart[role=red]`. More info on https://docs.asciidoctor.org/asciidoc/latest/macros/icon-macro/
+| `\icon:plus[]` or `\icon:heart[role=red]`. More info on https://docs.asciidoctor.org/asciidoc/latest/macros/icon-macro/
 | icon:plus[] or icon:heart[role=red]
 |===
