@@ -1,0 +1,14 @@
+:icons: font
+
+= Images
+
+== Blurring images with macOS Preview
+
+If you don't have fancy image editing tools such as Photoshop or Gimp on macOS to blur content of an image, you can still use Preview to do so.
+
+. Open the image with Preview.
+. Select the area that you want to blur and copy it.
+. Press kbd:[cmd+N] to create a new image from the copied content.
+. Resize this new image to a very small size, f.e. 10 pixels, but always remain the height/width ratio.
+. Copy the resized content and paste it in the original image.
+. Resize the copied content to fill the area that you want to blur.

@@ -1,0 +1,27 @@
+:icons: font
+:experimental:
+
+= Simulating issues in StorageMAP
+
+This page describes steps to introduce issues for jobs in StorageMAP.
+
+
+== Externally modified errors
+
+When migrating or replicating, you can modify files on the target while the job is still running.
+
+For both: when the job is in steady state, replace a file on the target.
+
+For a migration job, the next iteration will result in errors for the modified files.
+
+For a replication job, only a verification iteration will show errors. A regular iteration will overwrite the modified file with the source file.
+
+
+== Compatibility issues
+
+For shares and exports, there can be properties that are not supported between 2 systems, f.e. NetApp 7-mode and NetApp cDOT.
+
+
+== Not found error
+
+When you have done the first scan, pause the job. Then remove files or directories from the source and then resume the job. During the first copy there will be errors that files could not be found.

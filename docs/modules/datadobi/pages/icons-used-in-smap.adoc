@@ -11,7 +11,51 @@ The following is a list of icons that are used in Datadobi's StorageMAP
 | fa name
 | SMAP location
 
+| icon:arrow-up-right-from-square[]
+| arrow-up-right-from-square
+| To open details of an list, f.e. open the details of errors in the error details table of a job.
+
 | icon:bolt-lightning[]
 | bolt-lightning
 | In action column of a jobs overview table to go to a running automation task
+
+| icon:circle-info[]
+| circle-info
+| Open details of an item, f.e. an error in the error list.
+
+| icon:ellipsis-vertical[]
+| ellipsis-vertical
+| Action column of overview tables, more actions menu on details page.
+
+| icon:flag-checkered[]
+| flag-checkered
+| Finish a list-based job
+
+| icon:forward-step[]
+| forward-step
+| Next iteration
+
+| icon:gear[]
+| gear
+| Settings
+
+| icon:magnifying-glass[]
+| magnifying-glass
+| Details of an item, f.e. identity mapping configuration
+
+| icon:pause[]
+| pause
+| Pause a job or iteration
+
+| icon:pen-to-square[]
+| pen-to-square
+| Edit an item
+
+| icon:play[]
+| play
+| Resume/start a job
+
+| icon:stop[]
+| stop
+| Stop a job/iteration
 |===

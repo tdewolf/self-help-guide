@@ -1,5 +1,6 @@
 .Technical information
-* xref:linux-commands.adoc[Linux Commands]
-* xref:js-onclick-event-example.adoc[JavaScript Example]
+* xref:linux-commands.adoc[Linux commands]
+* xref:js-onclick-event-example.adoc[JavaScript example]
+* xref:images.adoc[Image manipulation]
 * xref:various.adoc[Various]
 

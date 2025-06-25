@@ -53,3 +53,16 @@ xref:<version>@<component>:<module>:<page>.adoc[<optional display text>]
 ```
 
 Where all values are optional. Go to the https://docs.antora.org/antora/latest/page/page-links/[Antora documentation] for more details.
+
+
+== target of include not found
+
+Even though Intellij correctly displays the included content, building the docs reports errors on includes not found.
+
+=== Cause
+
+The version in the antora.yml of the shared module is different from the other modules.
+
+=== Resolution
+
+Ensure that the version of all modules is identical.

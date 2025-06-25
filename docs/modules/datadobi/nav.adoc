@@ -1,0 +1,2 @@
+* xref:icons-used-in-smap.adoc[Used icons in StorageMAP]
+* xref:smap-simulation-actions.adoc[Simulating errors in StorageMAP]
