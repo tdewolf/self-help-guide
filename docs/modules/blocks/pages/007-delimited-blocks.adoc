@@ -29,6 +29,32 @@ your code here
 * sidebar: ****
 * table: |===
 
+Then there is the open block delimiter (--), which is specifically for capturing content in a div that can masquerade as pretty much any block type, but on its own it has no semantic other than "grouping" the contents. I mostly use it like:
+
+....
+some term::
++
+--
+First paragraph.
+
+Second paragraph.
+--
+....
+
+But of course, you could also use a + alone on a line between those paragraphs, to the same effect, which doesn't seem to work for all masquerade blocks. Most masquerades either need delimiters or they are confined to one contiguous block
+....
+[listing]
+Some text.
+Some more text in the same literal block.
++
+But this will break off and be a regular paragraph?
+....
+
+(I actually thought the + notation would work there. I swear I used to do admonitions that way, but it doesn't seem to work in VSC preview or in AsciiDocAlive.)
+And admonitions get their expected handling when used with `====` as they would with no delimiter, so it's a good convention to use those.
+I don't think it makes sense to use open block notation for anything but generic blocks. I do think sticking to the semantic delimiters is best.
+
+
 == Block metadata
 
 You can add metadata to the above-mentioned blocks. Here's an overview.
