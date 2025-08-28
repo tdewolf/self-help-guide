@@ -1,0 +1,44 @@
+= Partials
+
+With partials, you can create snippets that you can reuse in different topics. This allows you to write once and use many times. It helps writing in a consistent way and saves time if updates are needed as you will only have to update it once and you won't forget any occurrence.
+
+
+== Create partials
+
+Partials must be stored in a directory with the key name *partials*. This directory is stored under `<project>/<component>/modules/<module-name>/partials`. In this directory, you create your asciidoc files that you can include in other topics. If you have many partials, you can organize them by creating directories in this *partials* directory.
+
+The content of a partial file can be anything: regular text, list items (numbered and bulleted), table columns, images, ...
+
+To include a partial in a topic, use the `include` directive.
+
+```
+//For partials that are in the same module:
+\include::partial$<folder>/partial.adoc[]
+
+//For partials that are in another module:
+\include::other-module::partial$partial-from-other-module.adoc[]
+```
+
+TIP: With the `include` directive, you can specify what to include with specific attributes. See the https://docs.asciidoctor.org/asciidoc/latest/directives/include/[include documentation] in the asciidoctor documentation.
+
+
+== Create partials with variables
+
+Suppose you have a snippet where you have to change one word for each topic in which you are going to use it, for example, you have the same steps for different procedures but the procedure name is different. You can then use a variable in the partial file and define its value in the topic in which you are including the partial.
+
+.EXAMPLE
+====
+//Partial file:
+. Go to menu:Foo[Bar].
+. In the upper-right corner, click btn:[Do this] and select *{action-name}*.
+====
+
+Where `{action-name}` is the variable to be defined in the topic in which you are using the snippet.
+
+.EXAMPLE
+====
+//Topic:
+:action-name: "Buy parrot"
+
+\include::partial$partial-with-variable.adoc[]
+====
