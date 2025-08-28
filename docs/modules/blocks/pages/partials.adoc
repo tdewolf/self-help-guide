@@ -38,7 +38,7 @@ Where `{action-name}` is the variable to be defined in the topic in which you ar
 .EXAMPLE
 ====
 //Topic:
-:action-name: "Buy parrot"
+\:action-name: "Buy parrot"
 
 \include::partial$partial-with-variable.adoc[]
 ====
