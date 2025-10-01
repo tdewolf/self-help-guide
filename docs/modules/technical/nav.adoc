@@ -2,5 +2,7 @@
 * xref:linux-commands.adoc[Linux commands]
 * xref:js-onclick-event-example.adoc[JavaScript example]
 * xref:images.adoc[Image manipulation]
+* xref:isilon-commands.adoc[Isilon commands]
+* xref:python.adoc[Python thingies]
 * xref:various.adoc[Various]
 

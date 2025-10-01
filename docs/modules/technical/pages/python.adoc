@@ -1,0 +1,43 @@
+:icons: font
+:experimental:
+:source-url: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
+
+= Python technicalities
+
+== Virtual environments
+
+The details can be found on {source-url}.
+
+The venv module supports creating lightweight “virtual environments”, each with their own independent set of Python packages installed in their site directories. A virtual environment is created on top of an existing Python installation, known as the virtual environment’s “base” Python, and by default is isolated from the packages in the base environment, so that only those explicitly installed in the virtual environment are available.
+
+When used from within a virtual environment, common installation tools such as pip will install Python packages into a virtual environment without needing to be told to do so explicitly.
+
+[cols="30,70",options="header"]
+|===
+| Action
+| Command
+
+| Create venv
+a| `python3 -m venv .venv`
+
+In the folder where you execute this command, a new directory `.venv` is created. Ensure not to include it in your source code.
+
+| Activate venv
+a| `source .venv/bin/activate`
+
+Confirm that the venv is active by checking which Python is being used (`which python`), this should be in *.venv/bin/python*.
+
+| Deactivate venv
+a| `deactivate`
+
+Closing the terminal also closes the venv. After starting the terminal again, reactivate venv by activating venv.
+
+| Prepare `pip`
+| `python3 -m pip install --upgrade pip`
+
+| Install packages
+| `pip install <package>`
+
+| Install using requirements file
+| `pip install -r requirements.txt`
+|===
