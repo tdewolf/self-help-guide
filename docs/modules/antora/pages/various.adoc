@@ -14,9 +14,9 @@ For the full documentation, go to the link:https://docs.asciidoctor.org/asciidoc
 A simple example would be the usage of showing content in html but not in pdf.
 
 ----
-ifdef::pdf[]
+\ifdef::pdf[]
 Do only show in PDF output
-endif::pdf[]
+\endif::pdf[]
 ----
 
 In some situations, the `pdf` part is a variable that is set at the top of the page and the content between the `ifdef` and `endif` directives is a partial.
@@ -28,9 +28,9 @@ Your source could look like this:
 
 = heading 1
 
-ifdef::pdf[]
-include::partial$a-partial-here.adoc[]
-endif::pdf[]
+\ifdef::pdf[]
+\include::partial$a-partial-here.adoc[]
+\endif::pdf[]
 ----
 
 Now, it is possible to set a directive just before a section, but then that directive remains active for all subsequent content and asciidoc files (following the index or navigation file). If the directive should be reset after being used, you have to reset it. In the following example, we use a new images directory for a specific section (`:imagesdir: rest/`), but then reset it to the original one. To do so, you first store the original images directory in another variable (`:originalimagesdir: {imagesdir}`) and then assign this new variable back to the original one (`:imagesdir: {originalimagesdir}`).
@@ -39,7 +39,7 @@ Now, it is possible to set a directive just before a section, but then that dire
 ----
 :originalimagesdir: {imagesdir}
 :imagesdir: rest/
-include::rest/resources.adoc[]
-include::rest/types.adoc[]
+\include::rest/resources.adoc[]
+\include::rest/types.adoc[]
 :imagesdir: {originalimagesdir}
 ----
