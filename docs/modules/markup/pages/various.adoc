@@ -26,6 +26,7 @@ Your source could look like this:
 ----
 :pdf:
 
+
 = heading 1
 
 \ifdef::pdf[]
