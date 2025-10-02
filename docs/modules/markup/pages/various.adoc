@@ -11,7 +11,7 @@ This can be helpful when single-sourcing when there are bits that should be show
 
 For the full documentation, go to the link:https://docs.asciidoctor.org/asciidoc/latest/directives/ifdef-ifndef/[asciidoctor documentation].
 
-A simple example would be the usage of showing content in html but not in pdf.
+A simple example would be the usage of showing content in html but not in pdf, however, a better way is described xref:pdf-include[a bit further].
 
 ----
 \ifdef::pdf[]
@@ -42,6 +42,25 @@ Now, it is possible to set a directive just before a section, but then that dire
 \include::rest/resources.adoc[]
 \include::rest/types.adoc[]
 :imagesdir: {originalimagesdir}
+----
+
+
+[[pdf-include]]A better way to include and exclude content from PDF is the following:
+
+*Include content in PDF output only*
+
+----
+\ifdef::loader-assembler[]
+This content will only appear in the PDF.
+\endif::[]
+----
+
+*Exclude content from PDF output*
+
+----
+\ifndef::loader-assembler[]
+This content will only appear in the non-pdf output formats.
+\endif::[]
 ----
 
 
