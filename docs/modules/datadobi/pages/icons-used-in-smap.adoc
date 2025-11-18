@@ -9,7 +9,7 @@ The following is a list of icons that are used in Datadobi's StorageMAP
 |===
 | Icon
 | fa name
-| SMAP location
+| Example SMAP location
 
 | icon:arrow-up-right-from-square[]
 | arrow-up-right-from-square
@@ -29,33 +29,37 @@ The following is a list of icons that are used in Datadobi's StorageMAP
 
 | icon:flag-checkered[]
 | flag-checkered
-| Finish a list-based job
+| Finish a list-based job.
 
 | icon:forward-step[]
 | forward-step
-| Next iteration
+| Next iteration.
 
 | icon:gear[]
 | gear
-| Settings
+| Settings.
 
 | icon:magnifying-glass[]
 | magnifying-glass
-| Details of an item, f.e. identity mapping configuration
+| Details of an item, f.e. identity mapping configuration.
 
 | icon:pause[]
 | pause
-| Pause a job or iteration
+| Pause a job or iteration.
 
 | icon:pen-to-square[]
 | pen-to-square
-| Edit an item
+| Edit an item.
 
 | icon:play[]
 | play
-| Resume/start a job
+| Resume/start a job.
 
 | icon:stop[]
 | stop
-| Stop a job/iteration
+| Stop a job/iteration.
+
+| icon:xmark[]
+| xmark
+| Clear selection or selected items
 |===
