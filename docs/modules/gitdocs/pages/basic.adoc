@@ -54,3 +54,23 @@ a| git tag -a <tag> -m "<tag message>"
 push tag to remote: `git push origin <tag>`
 | Create a tag in a repo and push it to the remote.
 |===
+
+== Rotate SSH key
+
+If you have to rotate your SSH key to authenticate with a git service (gitlab/github/...), then follow these steps:
+
+. Create a new SSH key: `ssh-keygen -t ed25519 -C "your email"` where you use your email address with which you log in to the git service.
+. Follow the steps to create the SSH key.
+. Restart the SSH agent: `eval "$(ssh-agent -s)"`
+. Add the new key to the SSH agent: `ssh-add ~/.ssh/<your new key name>`
+. Copy the new public key: `cat ~/.ssh/<your new key name>.pub`, for example, `cat ~/.ssh/id_ed25519.pub`
+. Go to the git service web page.
+. Go to the settings and select SSH keys.
+. Add a new key:
+.. Enter a meaningful name.
+.. Copy the content of the public key.
+.. Save the new key.
+.. Test the connection: `ssh -T git@github.com` or `ssh -T git@gitlab.com`
++
+NOTE: It is possible that this command fails, to be sure, test by executing a `git pull` command in a local git repo.
+.. If the connection test is successful, delete the outdated key.
