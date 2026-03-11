@@ -93,3 +93,17 @@ git push ssh://git@bitbucket.collbira.com/doc/newrepo.git feature/DOC-1234-old-r
 ----
 git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 ----
+
+* When creating a new ssh key, run the following steps:
++
+----
+1. Load new key in ssh agent:
+1a. eval "$(ssh-agent -s)"
+1b ssh-add ~/.ssh/<id_ed25519> #path to your new ssh key
+
+2. Add the public key to the git service (github, gitlab, bitbucket,...)
+
+3. Test the connection: ssh -T git@gitlab.com
+
+You should see something like "Welcome to Gitlab, @<your username)" or "Hi @<your username>! You've successfully authenticated..."
+----
