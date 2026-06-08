@@ -23,3 +23,26 @@ npx antora --clean --fetch playbook.yml
 ----
 
 When you run `npx antora playbook.yml`, you will get the same error but maybe with an updated path.
+
+
+== Build PDF
+
+You must have installed the package `@antora/pdf-extension`.
+
+In your playbook, enable this extension and set the attribute.
+
+----
+antora:
+  extensions:
+    - '@antora/pdf-extension'
+
+asciidoc:
+  attributes:
+    backend-pdf: ''
+----
+
+Then run the following command the build the PDF of the playbook:
+
+----
+npx --package @antora/pdf-extension antora -r @antora/pdf-extension virtual-appliance/antora-playbook-local.yml
+----
