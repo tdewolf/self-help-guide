@@ -66,3 +66,25 @@ The version in the antora.yml of the shared module is different from the other m
 === Resolution
 
 Ensure that the version of all modules is identical.
+
+
+== Image not found in PDF
+
+It may occur that an image in a table cell is missing when building PDF, in HTML the image is shown.
+
+You get an error when building the PDF:
+
+`asciidoctor: WARNING: image to embed not found or not readable: /path/to/file.png`
+
+=== Cause
+
+Most likely, there is an inline comment in the table. All images in a table that come after an inline comment will not be shown.
+
+
+=== Resolution
+
+Ensure that the image is available in the used path.
+
+Remove the inline comment or convert it to a link:https://docs.asciidoctor.org/asciidoc/latest/comments/#comment-blocks[comment block].
+
+This is a link:https://docs.antora.org/assembler/latest/known-issues/#using-line-comments-in-tables[known issue].
