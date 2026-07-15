@@ -6,9 +6,9 @@ If you have files that you can download from a page and you want to track how ma
 
 The JS to be added to your page:
 
-[soruce,js]
+[source,js]
 ----
-include::example$js-onclick-event.js[]
+include::example$js-onclick-event-ga4.js[]
 ----
 
 A regular hyperlink has the following format:
@@ -21,4 +21,15 @@ Now you can add an `onclick` argument that calls the Javascript function, in the
 
 ----
 <a onclick="sendEvent('your custom param')" href="https://www.example.com">Your text here</a>
+----
+
+`your custom param` value will be passed on to `event_label` in your script.
+
+The above is valid for Google Analytics 4.
+
+In Google Analytics prior to GA4 (aka Universal Analytics), you have to use the following javascript:
+
+[source,js]
+----
+include::example$js-onclick-event-old-ga.js[]
 ----
