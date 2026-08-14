@@ -88,10 +88,22 @@ Example:
 git push ssh://git@bitbucket.collbira.com/doc/newrepo.git feature/DOC-1234-old-repo:master
 ----
 
-* Delete all local branches that no longer exist on remote
+* Delete list of branches that come from a text file. Ensure that it's a plain text file with 1 branch per line and no trailing empty line. Let's say the text file is `branches.txt` and that it's stored in your home dir:
+
+----
+git push origin --delete $(cat ~/branches.txt)
+----
+
+* Delete all local branches that no longer exist on remote:
 +
 ----
 git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+----
++
+or when you use the same `branches.txt` file from the previous bullet point:
++
+----
+git branch -D $(cat ~/branches.txt)
 ----
 
 * When creating a new ssh key, run the following steps:
