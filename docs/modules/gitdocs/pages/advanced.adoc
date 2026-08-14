@@ -89,7 +89,7 @@ git push ssh://git@bitbucket.collbira.com/doc/newrepo.git feature/DOC-1234-old-r
 ----
 
 * Delete list of branches that come from a text file. Ensure that it's a plain text file with 1 branch per line and no trailing empty line. Let's say the text file is `branches.txt` and that it's stored in your home dir:
-
++
 ----
 git push origin --delete $(cat ~/branches.txt)
 ----
