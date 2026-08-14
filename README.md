@@ -4,7 +4,7 @@ Repo with all kinds of help articles that I find the most useful, most likely be
 
 To build the documentation:
 
-`npx antora --clean --fetch playbook-lnr.yml`
+./publish_shg.sh
 
 Open the documentation at:
 
