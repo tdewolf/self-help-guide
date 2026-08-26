@@ -19,6 +19,19 @@ git reset --hard HEAD^
 ----
 
 
+== Change commit message
+
+Suppose you have accidentally written an error in your last commit message, you can change it as follows:
+
+----
+git commit --amend
+----
+
+This opens your default text editor. On the first line, you see the commit message. Change the message and save it and quit the editor. Then push your commit to the central repository.
+
+If your commit was already pushed, then force push the updated commit.
+
+
 == Revert a committed merge
 
 Revert a merge commit, even if the merge is already pushed and that there's already new commits after the merge (can only be done command line). The merge will be reverted but the commits after the merge will remain!

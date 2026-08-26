@@ -82,3 +82,19 @@ origin  git@github.com:tdewolf/<new repo>.git (fetch)
 origin  git@github.com:tdewolf/<new repo>.git (push)
 ----
 . If that is fine, rename the <old repo> folder to <new repo>.
+
+
+== Recover a deleted branch
+
+See https://medium.com/@fullstack-shepherd/recovering-deleted-git-branches-ac08703e2056[this blog post].
+
+You need to know the hash of when the branch was deleted, if not I guess you're lost. The mentioned blog post configures your environment so that all deleted branches are stored in a file so that you can always track this information.
+
+But in short, to recover a delete branch:
+
+On your master branch:
+----
+git branch <branchname> <hash>
+
+git push origin <branchname>  #if branch was also deleted from remote
+----

@@ -2,7 +2,7 @@
 * xref:basic.adoc[Basic git commands]
 * xref:advanced.adoc[Advanced git commands]
 * xref:undo-actions.adoc[Undo git actions]
-* xref:rename-branch.adoc[Rename branch]
+* xref:working-with-branches.adoc[Rename branch]
 * xref:forks.adoc[Forking repos]
 * xref:migrate.adoc[Migrate directories]
 * xref:precommit-hooks.adoc[Pre-commit hooks]
